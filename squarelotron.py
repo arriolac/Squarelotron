@@ -25,6 +25,14 @@ def make_4x4_squarelotron():
 def make_5x5_squarelotron():
     return make_squarelotron(range(1,26))
 
+# Returns the squarelotron as a flat list of numbers
+def make_list(squarelotron):
+    return [item for sublist in squarelotron for item in sublist]
+
+# Performs an upsidedown flip - 0 is the outer ring, 1 is the inner ring
+def upside_down_flip(squarelotron, ring):
+
+
 # Starts the program
 def main():
     size = input('Would you like a 4x4 or a 5x5 squarelotron? Enter 4 or 5: ')

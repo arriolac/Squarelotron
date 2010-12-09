@@ -21,9 +21,13 @@ def make_squarelotron(lst):
 def make_4x4_squarelotron():
     return make_squarelotron(range(1,17))
 
-# Creates a 4x4 squarelatron
+# Creates a 5x5 squarelatron
 def make_5x5_squarelotron():
     return make_squarelotron(range(1,26))
+
+# Returns the squarelotron as a flat list of numbers
+def make_list(squarelotron):
+    return [item for sublist in squarelotron for item in sublist]
 
 # Starts the program
 def main():
