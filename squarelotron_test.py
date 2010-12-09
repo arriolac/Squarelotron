@@ -1,0 +1,41 @@
+""" 
+    Program: test_squarelotron.py
+    Author: Chris Arriola
+    Date:   Dec. 9, 2010
+    Description: Unit testing for squarelotron.py
+"""
+import squarelotron
+import unittest
+
+class TestSquarelotron(unittest.TestCase):
+
+    def testMake_squarelotron(self):
+        self.assertEquals([[1, 2, 3, 4],
+                           [5, 6, 7, 8],
+                           [9, 10, 11, 12],
+                           [13, 14, 15, 16]],
+                          squarelotron.make_squarelotron(range(1,17)))
+
+        self.assertEquals([[1, 2, 3, 4, 5],
+                           [6, 7, 8, 9, 10],
+                           [11, 12, 13, 14, 15],
+                           [16, 17, 18, 19, 20],
+                           [21, 22, 23, 24, 25]],
+                          squarelotron.make_squarelotron(range(1,26)))
+        
+    def testMake_4x4_squarelotron(self):
+        self.assertEquals([[1, 2, 3, 4],
+                           [5, 6, 7, 8],
+                           [9, 10, 11, 12],
+                           [13, 14, 15, 16]],
+                          squarelotron.make_4x4_squarelotron())
+
+    def testMake_5x5_squarelotron(self):
+        self.assertEquals([[1, 2, 3, 4, 5],
+                           [6, 7, 8, 9, 10],
+                           [11, 12, 13, 14, 15],
+                           [16, 17, 18, 19, 20],
+                           [21, 22, 23, 24, 25]],
+                          squarelotron.make_5x5_squarelotron())
+
+unittest.main()
