@@ -1,0 +1,9 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Author: Chris Arriola
+Date:   Dec. 9, 2010
+Description: A squarelotron game. It will ask you whether to use a 4x4 or a
+    5x5 squarelotron, then print out the initial squarelotron. Thent the 
+    program will let you tell it which flips to perform and it will print out
+    the new squarelotron after each flip. This is based on Dr. Dave Matuszek's
+    CIT591 class - www.cis.upenn.edu/~matuszek/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
