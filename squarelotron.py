@@ -31,7 +31,23 @@ def make_list(squarelotron):
 
 # Performs an upsidedown flip - 0 is the outer ring, 1 is the inner ring
 def upside_down_flip(squarelotron, ring):
+    reversedSquarelotron = []
+    
+    for row in reversed(squarelotron):
+        reversedSquarelotron.append(row)
 
+    for i in range(0, len(squarelotron)):
+        print squarelotron[i]
+        if (ring == 0):
+            if (i != 0 and i != len(squarelotron)-1):
+                reversedSquarelotron[i][1:-1] = squarelotron[i][1:-1]
+        else:
+            if (i == 0 or i == len(squarelotron)-1):
+                reversedSquarelotron[i][:] = squarelotron[i][:]
+            else:
+                reversedSquarelotron[i][0] = squarelotron[i][0]
+                reversedSquarelotron[i][-1] = squarelotron[i][-1]
+    return reversedSquarelotron
 
 # Starts the program
 def main():
