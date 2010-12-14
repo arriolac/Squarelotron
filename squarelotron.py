@@ -34,10 +34,9 @@ def upside_down_flip(squarelotron, ring):
     reversedSquarelotron = []
     
     for row in reversed(squarelotron):
-        reversedSquarelotron.append(row)
+        reversedSquarelotron.append(list(row)) # create a hard copy of the list
 
     for i in range(0, len(squarelotron)):
-        print squarelotron[i]
         if (ring == 0):
             if (i != 0 and i != len(squarelotron)-1):
                 reversedSquarelotron[i][1:-1] = squarelotron[i][1:-1]
