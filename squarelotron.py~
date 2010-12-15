@@ -8,7 +8,6 @@
 """
 import math
 
-
 # Creates a squarelotron from a list
 def make_squarelotron(lst):
     size = int(math.sqrt(len(lst)))
@@ -34,11 +33,31 @@ def upside_down_flip(squarelotron, ring):
     reversedSquarelotron = []
     
     for row in reversed(squarelotron):
-        reversedSquarelotron.append(list(row))
+        reversedSquarelotron.append(list(row)) # create a hard copy of the list
 
     for i in range(0, len(squarelotron)):
         if (ring == 0):
             if (i != 0 and i != len(squarelotron)-1):
+                reversedSquarelotron[i][1:-1] = squarelotron[i][1:-1]
+        else:
+            if (i == 0 or i == len(squarelotron)-1):
+                reversedSquarelotron[i][:] = squarelotron[i][:]
+            else:
+                reversedSquarelotron[i][0] = squarelotron[i][0]
+                reversedSquarelotron[i][-1] = squarelotron[i][-1]
+    return reversedSquarelotron
+
+# Performs a left to right flip - 0 is the outer ring, 1 is the inner ring
+def left_right_flip(squarelotron, ring):
+    reversedSquarelotron = []
+
+    for row in squarelotron:
+        reversedSquarelotron.append(list(row))
+        reversedSquarelotron[-1].reverse()
+
+    for i in range(0, len(squarelotron)):
+        if (ring == 0):
+            if (i != 0 and i != len(squarlotron)-1):
                 reversedSquarelotron[i][1:-1] = squarelotron[i][1:-1]
         else:
             if (i == 0 or i == len(squarelotron)-1):
