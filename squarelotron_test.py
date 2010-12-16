@@ -47,6 +47,15 @@ class TestSquarelotron(unittest.TestCase):
             range(1,26),
             squarelotron.make_list(squarelotron.make_5x5_squarelotron()))
         
+    def testGet_column(self):
+        squarelotron_4x4 = squarelotron.make_4x4_squarelotron()
+        squarelotron_5x5 = squarelotron.make_5x5_squarelotron()
+
+        self.assertEquals([1,6,11,16,21],
+                squarelotron.get_column(squarelotron_5x5, 0))
+        self.assertEquals([4, 8, 12, 16],
+                squarelotron.get_column(squarelotron_4x4, 3))
+
     def testUpside_down_flip(self):
         squarelotron_4x4 = squarelotron.make_4x4_squarelotron()
         squarelotron_5x5 = squarelotron.make_5x5_squarelotron()
@@ -138,5 +147,47 @@ class TestSquarelotron(unittest.TestCase):
              [22, 17, 18, 19, 2],
              [21, 16, 11,  6, 1]],
             squarelotron.inverse_diagonal_flip(squarelotron_5x5, 0))
+
+        self.assertEquals(
+            [[ 1,  2,  3, 4, 5],
+             [ 6, 19, 14, 9, 10],
+             [11, 18, 13, 8, 15],
+             [16, 17, 12, 7, 20],
+             [21, 22, 23, 24, 25]],
+            squarelotron.inverse_diagonal_flip(squarelotron_5x5, 1))
+
+    def testMain_diagonal_flip(self):
+        squarelotron_4x4 = squarelotron.make_4x4_squarelotron()
+        squarelotron_5x5 = squarelotron.make_5x5_squarelotron()
+            
+        self.assertEquals(
+            [[1,   2,  3,  4],
+             [5,   6, 10,  8],
+             [9,   7, 11, 12],
+             [13, 14, 15, 16]],
+            squarelotron.main_diagonal_flip(squarelotron_4x4, 1))
+    
+        self.assertEquals(
+            [[1,  5,  9, 13],
+             [2,  6,  7, 14],
+             [3, 10, 11, 15],
+             [4,  8, 12, 16]],
+            squarelotron.main_diagonal_flip(squarelotron_4x4, 0))
+
+        self.assertEquals(
+            [[1,  6, 11, 16, 21],
+             [2,  7,  8,  9, 22],
+             [3, 12, 13, 14, 23],
+             [4, 17, 18, 19, 24],
+             [5, 10, 15, 20, 25]],
+            squarelotron.main_diagonal_flip(squarelotron_5x5, 0))
+
+        self.assertEquals(
+            [[ 1,  2,  3,  4, 5],
+             [ 6,  7, 12, 17, 10],
+             [11,  8, 13, 18, 15],
+             [16,  9, 14, 19, 20],
+             [21, 22, 23, 24, 25]],
+            squarelotron.main_diagonal_flip(squarelotron_5x5, 1))
 
 unittest.main()
