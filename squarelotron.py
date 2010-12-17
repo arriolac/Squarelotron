@@ -91,9 +91,33 @@ def main_diagonal_flip(squarelotron, ring):
 
     return restore_ring(flippedSquarelotron, squarelotron, ring)
 
+################################### IO ########################################
+# Prints the commands
+def print_commands():
+    print "Enter a command followed by the ring number:"
+    print "u - upside down flip"
+    print "l - left right flip"
+    print "i - inverse diagonal flip"
+    print "m - main diagonla flip"
+    print "q - quit"
+    print "e.g. For an upside-down flip on the outer ring, call 'u0'"
+    print "     For a left-right flip on the inner ring, call 'l1', etc."
 
+
+# Prints the squarelotron
+def print_squarelotron(squarelotron):
+    for row in squarelotron:
+        print " ".join(map(lambda i: " %s" % i if i/10 == 0 else "%s" % i, row))
 
 # Starts the program
 def main():
+    print_commands() 
     size = input('Would you like a 4x4 or a 5x5 squarelotron? Enter 4 or 5: ')
-     
+
+    squarelotron = make_4x4_squarelotron() if size == 4 else make_5x5_squarelotron()
+    print_squarelotron(squarelotron)
+    
+    action = raw_input('Enter a command: ')
+
+    while action != 'q':
+        action = raw_input('Enter a command: ')
